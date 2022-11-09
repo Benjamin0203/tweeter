@@ -17,10 +17,7 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.new-tweet button {
-  /* /* width: 50%;
-  height: 3rem; */
-  
+.new-tweet button {  
   border-radius: 5px;
   border: 1px solid #4056A1;
   background-color: #4056A1;
