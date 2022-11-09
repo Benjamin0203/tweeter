@@ -59,20 +59,15 @@ const createTweetElement = tweetData => {
 };
 
 const renderTweets = tweets => {
-  $('#tweet-container').empty();
+  $('#tweets-container').empty();
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweet-container').prepend($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 };
-
 
 
 $(() => {
   renderTweets(data);
 });
 
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
