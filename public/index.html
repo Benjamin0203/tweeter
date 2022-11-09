@@ -49,7 +49,7 @@
         </div>
       </div>    
     </nav>
-    <header>
+    <header class="header">
       <div>
         <img src="/images/profile-hex.png"> 
       </div>
@@ -61,8 +61,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="post">
-          <!--<label for="tweet-text">What are you humming about?</label>-->
+        <form action="/tweets" method="post" class="tweet">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="tweet-footer">
           <button id="submit" type="submit">Tweet</button>
@@ -70,6 +69,29 @@
           </div>
         </form>
       </section>
+ 
+      <section id="tweet-container">
+        <article class="tweet">
+          <header class="tweet-header">
+            <div class="tweet-profile">
+              <img class="tweet-avatar" src="/images/profile-hex.png">
+              <h3>Newton</h3>
+            </div>
+          </header>
+          <div class="tweet-comment">
+            <p>Hello World!</p>
+          </div>
+          <footer class="tweet-new-footer">
+            <span class="tweet-date"> 10 days ago</span>
+            <div class="tweet-logos">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+      
     </main>
   </body>
 </html>

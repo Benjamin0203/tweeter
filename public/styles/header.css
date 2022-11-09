@@ -6,7 +6,7 @@ The background-color should be a different colour than the nav and the body*/
 
 /*  400 pixels of <header> to be visible when the element is behind another element. */
 
-header {
+.header {
   display: flex;
   margin-top: 50px;
   flex-direction: column;

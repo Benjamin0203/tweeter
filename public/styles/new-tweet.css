@@ -51,10 +51,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 1rem; 
-  margin-bottom: 5px;
+  border-width: 5px;
+  padding-top: 10px; 
+  margin-bottom: 10px;
   font-family: 'Bungee', cursive;
   font-size: 24px;
+  border-top-style: solid;
 }
 
 .errorMsg {
@@ -62,3 +64,87 @@
   font-size: 1.5rem;
   font-family: 'Bungee', cursive;
 }
+
+/*Tweet comments*/
+
+#tweet-container {
+  margin-left: 5%;
+  padding-bottom: 20px;
+  flex-direction: column;
+  width: 90%;
+  font-family: sans-serif;
+}
+
+.tweet:hover {
+  box-shadow: 5px 5px #6d6a6a;
+}
+
+.tweet {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: antiquewhite;
+  border: 5px solid black;
+}
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  height: 100px;
+  background-color: antiquewhite;
+}
+
+.tweet-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.tweet-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.tweet-comment {
+  font-size: 18px;
+  padding: 15px;
+  margin-left: 2%;
+}
+
+.tweet-new-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-width: 5px;
+  border-top-style: solid;
+  font-size: 15px;
+}
+
+.tweet-date {
+  margin-left: 2%;
+  padding: 5px;
+  color: rgb(127, 131, 131);
+  font-weight: 600;
+}
+
+.tweet-logos {
+  margin-right: 2%;
+}
+
+.tweet-logos i {
+  padding: 5px;
+  color: #4056A1;
+}
+.tweet-logos i:hover {
+  color: rgb(243, 228, 27);
+}
+
+
