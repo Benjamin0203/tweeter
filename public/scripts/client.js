@@ -24,7 +24,8 @@ const data = [
     "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
@@ -74,23 +75,34 @@ const loadTweets = () => {
 
 //Document ready function
 $(() => {
-  renderTweets(data);
-
   $("#new-tweet-form").on("submit", event => {
-    const $tweetText = $("#tweet-text");
-          $.ajax({
-            url: "/tweets",
-            method: "POST",
-            data: $("#new-tweet-form").serialize()
-          }).then(() => {
-            // load the tweets callback function
-            loadTweets();
-            //reset texts to empty (140)
-            $tweetText.val("");
-            $(".counter").text(140);
-    });
     // prevent the default form submission
     event.preventDefault();
+
+    const $tweetText = $("#tweet-text");
+    const $text = $tweetText.val();
+
+    if (!$text) {
+      return alert("Your tweet is empty!");
+    }
+    
+    if ($text.length > 140) {
+      return alert("Your tweet is too long!");
+    }
+
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: $("#new-tweet-form").serialize()
+    }).then(() => {
+      // load the tweets callback function
+      loadTweets();
+      //reset texts to empty (140)
+      $tweetText.val("");
+      $(".counter").text(140);
+    });
+    
+     
   });
 });
 
