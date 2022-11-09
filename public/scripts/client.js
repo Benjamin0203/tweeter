@@ -46,7 +46,7 @@ const createTweetElement = tweetData => {
             ${tweetData.content.text}
           </div>
           <footer class="tweet-new-footer">
-            <span class="tweet-date">${tweetData.created_at}</span>
+            <span class="tweet-date">${timeago.format(tweetData.created_at)}</span>
             <div class="tweet-logos">
               <i class="fa-solid fa-flag"></i>
               <i class="fa-solid fa-retweet"></i>
@@ -66,7 +66,13 @@ const renderTweets = tweets => {
   }
 };
 
+const loadTweets = () => {
+  $.get("/tweets", data => {
+    renderTweets(data);
+  })
+};
 
+//Document ready function
 $(() => {
   renderTweets(data);
 
@@ -78,9 +84,7 @@ $(() => {
             data: $("#new-tweet-form").serialize()
           }).then(() => {
             // load the tweets callback function
-            $.get("/tweets", data => {
-              renderTweets(data);
-            })
+            loadTweets();
             //reset texts to empty (140)
             $tweetText.val("");
             $(".counter").text(140);
