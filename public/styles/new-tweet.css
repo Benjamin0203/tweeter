@@ -144,4 +144,9 @@
   color: rgb(243, 228, 27);
 }
 
-
+/* Error notifications with triangle logos*/
+.error-notification {
+  border: 5px solid red;
+  color: red;
+  font-weight: 600;
+}

@@ -43,7 +43,7 @@ const escapeFunc = str => {
 
 const createTweetElement = tweetData => {
   const safeContent = escapeFunc(tweetData.content.text);
-  
+
   let $tweet = $(`
   <article class="tweet">
           <header class="tweet-header">
@@ -84,6 +84,11 @@ const loadTweets = () => {
 
 //Document ready function
 $(() => {
+  //hide the error messages when loading the page
+  $("#error-empty-text").slideUp("slow");
+  $("#error-max-text").slideUp("slow");
+
+  //Start
   $("#new-tweet-form").on("submit", event => {
     // prevent the default form submission
     event.preventDefault();
@@ -92,24 +97,35 @@ $(() => {
     const $text = $tweetText.val();
 
     if (!$text) {
-      return alert("Your tweet is empty!");
-    }
-    
-    if ($text.length > 140) {
-      return alert("Your tweet is too long!");
-    }
+      // return alert("Your tweet is empty!");
+      $("#error-empty-text").slideDown("slow");
+      $("#error-max-text").slideUp("slow");
+      $tweetText.on("keyup", () => {
+        $("#error-empty-text").slideUp("slow");
+      })
+    } else if ($text.length > 140) {
+      // return alert("Your tweet is too long!");
+      $("#error-max-text").slideDown("slow");
+      $("#error-empty-text").slideUp("slow");
+      $tweetText.on("keyup", () => {
+        if ($text.length <= 140) {
+          $("#error-max-text").slideUp("slow");
+        }
+      })
+    } else {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: $("#new-tweet-form").serialize()
+      }).then(() => {
+        // load the tweets callback function
+        loadTweets();
 
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: $("#new-tweet-form").serialize()
-    }).then(() => {
-      // load the tweets callback function
-      loadTweets();
-      //reset texts to empty (140)
-      $tweetText.val("");
-      $(".counter").text(140);
-    }); 
+        //reset texts to empty (140)
+        $tweetText.val("");
+        $(".counter").text(140);
+      });
+    }
   });
 });
 
