@@ -150,3 +150,20 @@
   color: red;
   font-weight: 600;
 }
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    display: flex;
+    width: 50%;
+    margin-left: 75%;
+    margin-right: 5%;
+    margin-top: 10%;
+  }
+  
+  #tweets-container {
+    display: flex;
+    width: 45%;
+    margin-left: 77.5%;
+    margin-right: 5%;
+  }
+}

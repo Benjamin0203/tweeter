@@ -92,7 +92,7 @@ $(() => {
   $("#new-tweet-form").on("submit", event => {
     // prevent the default form submission
     event.preventDefault();
-
+    
     const $tweetText = $("#tweet-text");
     const $text = $tweetText.val();
 
@@ -120,7 +120,10 @@ $(() => {
       }).then(() => {
         // load the tweets callback function
         loadTweets();
+
+        //hide the error max text notification
         $("#error-max-text").slideUp("slow");
+
         //reset texts to empty (140)
         $tweetText.val("");
         $(".counter").text(140);

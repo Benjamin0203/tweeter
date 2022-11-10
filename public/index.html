@@ -39,6 +39,10 @@
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!--Disable viewport zooming-->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   </head>
 
   <body>
@@ -52,6 +56,7 @@
         </div>
       </div>    
     </nav>
+    <!-- Header Benjamin Meng -->
     <header class="header">
       <div>
         <img src="/images/profile-hex.png"> 
@@ -60,15 +65,18 @@
         <h2 class="name"><span class="firstName">Benjamin</span> Meng</h2>
       </div>
   </header>
+
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+
         <!--Empty text error notification-->
         <span class="error-notification" id="error-empty-text">
           <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
           Empty text. Plz write something.
           <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
         </span>
+        
         <!--Texts exceeds 140 error notification-->
         <span class="error-notification" id="error-max-text">
           <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
