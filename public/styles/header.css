@@ -44,7 +44,8 @@ The background-color should be a different colour than the nav and the body*/
   }
   .header img {
     display: flex;
+    padding-top: 15%;
     max-width: 150px;
-    max-height: 150px;
+    max-height: 120px;
   }
 }
