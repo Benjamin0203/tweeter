@@ -43,7 +43,7 @@ The background-color should be a different colour than the nav and the body*/
     margin-left: 5%;
   }
   .header img {
-    margin-top: 2rem;
+    display: flex;
     max-width: 150px;
     max-height: 150px;
   }
