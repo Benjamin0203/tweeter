@@ -33,8 +33,17 @@ const data = [
   }
 ]
 
+//Escape Function to encode the input to get secure texts
+const escapeFunc = str => {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 
 const createTweetElement = tweetData => {
+  const safeContent = escapeFunc(tweetData.content.text);
+  
   let $tweet = $(`
   <article class="tweet">
           <header class="tweet-header">
@@ -44,7 +53,7 @@ const createTweetElement = tweetData => {
             </div>
           </header>
           <div class="tweet-comment">
-            ${tweetData.content.text}
+            ${safeContent}
           </div>
           <footer class="tweet-new-footer">
             <span class="tweet-date">${timeago.format(tweetData.created_at)}</span>
@@ -100,9 +109,7 @@ $(() => {
       //reset texts to empty (140)
       $tweetText.val("");
       $(".counter").text(140);
-    });
-    
-     
+    }); 
   });
 });
 
