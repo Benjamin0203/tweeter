@@ -107,11 +107,11 @@ $(() => {
       // return alert("Your tweet is too long!");
       $("#error-max-text").slideDown("slow");
       $("#error-empty-text").slideUp("slow");
-      $tweetText.on("keyup", () => {
-        if ($text.length <= 140) {
-          $("#error-max-text").slideUp("slow");
-        }
-      })
+      // $tweetText.on("keyup", () => {
+      //   if ($text.length <= 140) {
+      //     $("#error-max-text").slideUp("slow");
+      //   }
+      // })
     } else {
       $.ajax({
         url: "/tweets",
@@ -120,7 +120,7 @@ $(() => {
       }).then(() => {
         // load the tweets callback function
         loadTweets();
-
+        $("#error-max-text").slideUp("slow");
         //reset texts to empty (140)
         $tweetText.val("");
         $(".counter").text(140);
@@ -128,4 +128,3 @@ $(() => {
     }
   });
 });
-
