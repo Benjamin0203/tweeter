@@ -107,11 +107,6 @@ $(() => {
       // return alert("Your tweet is too long!");
       $("#error-max-text").slideDown("slow");
       $("#error-empty-text").slideUp("slow");
-      // $tweetText.on("keyup", () => {
-      //   if ($text.length <= 140) {
-      //     $("#error-max-text").slideUp("slow");
-      //   }
-      // })
     } else {
       $.ajax({
         url: "/tweets",
