@@ -3,7 +3,9 @@ The visible portion of the header should have a height of 400px and be 100% the 
 The avatar should be centered vertically and horizontally (Hint: the justify-content and align-items properties are helpful for centering things if you're using Flexbox.)
 The name should be centered below the avatar
 The background-color should be a different colour than the nav and the body*/
+
 /*  400 pixels of <header> to be visible when the element is behind another element. */
+
 .header {
   display: flex;
   margin-top: 100px;
@@ -20,12 +22,12 @@ The background-color should be a different colour than the nav and the body*/
   justify-content: center;
   align-items: center;
 } */
+
 .name {
   color: #FFFFFF;
   font-weight: 300;
   margin-top: 10px;
 }
-
 .firstName {
   color: #FFFFFF;
   font-weight: 700;
@@ -35,13 +37,13 @@ The background-color should be a different colour than the nav and the body*/
   .header {
     position: fixed;
     display: flex;
-    width: 40%;
-    height: 50%;
+    width: 25%;
+    height: 25%;
     margin-top: 15%;
     margin-left: 5%;
   }
   .header img {
-    display: flex;
+    display:flex;
     padding-top: 15%;
     max-width: 150px;
     max-height: 120px;
